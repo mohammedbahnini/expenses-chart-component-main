@@ -1,0 +1,170 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: hsl(27deg, 66%, 92%);
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+/* CARD COMPONENT */
+.card {
+  width: 30rem;
+}
+@media (max-width: 42.66666666rem) {
+  .card {
+    width: 90%;
+  }
+}
+.card__head {
+  border-radius: 1rem;
+  background-color: hsl(10deg, 79%, 65%);
+  padding: 2rem;
+  color: hsl(33deg, 100%, 98%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.card__head .total {
+  font-size: 1.75rem;
+}
+@media (max-width: 32rem) {
+  .card__head .total {
+    font-size: 1.5rem;
+  }
+}
+.card__body {
+  background-color: white;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+}
+.card__body-title {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 32rem) {
+  .card__body-title {
+    font-size: 1.5rem;
+  }
+}
+.card__body-chart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.75rem;
+  border-bottom: 1px solid #efedeb;
+  padding-bottom: 2rem;
+}
+.card__body-chart .chart-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.card__body-chart .chart-item__bar {
+  min-height: 12rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  margin-bottom: 0.5rem;
+}
+.card__body-chart .chart-item__bar .inner-bar {
+  background-color: hsl(10deg, 79%, 65%);
+  height: 0rem;
+  border-radius: 0.4rem;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+  position: relative;
+}
+.card__body-chart .chart-item__bar .inner-bar .amount {
+  position: absolute;
+  color: hsl(33deg, 100%, 98%);
+  background-color: hsl(25deg, 47%, 15%);
+  top: 0em;
+  padding: 0.5rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 0.25rem;
+  opacity: 0;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  font-size: 0.8rem;
+}
+.card__body-chart .chart-item__bar .inner-bar:hover {
+  background-color: #f7c5bb;
+}
+.card__body-chart .chart-item__bar .inner-bar:hover .amount {
+  opacity: 1;
+  top: -2.25rem;
+}
+.card__body-chart .chart-item.active .inner-bar {
+  background-color: hsl(186deg, 34%, 60%);
+}
+.card__body-chart .chart-item.active .inner-bar:hover {
+  background-color: #bbdadd;
+}
+.card__body-chart .chart-item .day-name {
+  text-align: center;
+  color: hsl(28deg, 10%, 53%);
+}
+@media (max-width: 32rem) {
+  .card__body-chart .chart-item .day-name {
+    font-size: 0.75rem;
+  }
+}
+.card__body-footer {
+  padding-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+.card__body-footer .current-month .title {
+  color: hsl(28deg, 10%, 53%);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.card__body-footer .current-month .total {
+  color: hsl(25deg, 47%, 15%);
+  font-size: 2.4rem;
+}
+@media (max-width: 32rem) {
+  .card__body-footer .current-month .total {
+    font-size: 2rem;
+  }
+}
+.card__body-footer .last-month .total {
+  text-align: right;
+  color: hsl(25deg, 47%, 15%);
+  font-weight: bold;
+}
+.card__body-footer .last-month .title {
+  color: hsl(28deg, 10%, 53%);
+}
+/*# sourceMappingURL=app.css.map */

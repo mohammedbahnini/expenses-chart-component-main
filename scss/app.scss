@@ -1,0 +1,132 @@
+@use "vars" as *;
+
+@use "rules";
+
+@use "mixins" as *;
+
+/* CARD COMPONENT */
+.card {
+  width: 30rem;
+  @include sm {
+    width: 90%;
+  }
+  &__head {
+    border-radius: 1rem;
+    background-color: $red-soft;
+    padding: 2rem;
+    color: $pale-orange;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    .total {
+      font-size: 1.75rem;
+      @include xsm {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__body {
+    background-color: white;
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    &-title {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      @include xsm {
+        font-size: 1.5rem;
+      }
+    }
+    &-chart {
+      display: flex;
+      gap: 0.75rem;
+      border-bottom: 1px solid lighten($midium-brown, 40%);
+      padding-bottom: 2rem;
+      .chart-item {
+        flex: 1;
+
+        &__bar {
+          min-height: 12rem;
+          display: flex;
+          flex-direction: column-reverse;
+          margin-bottom: 0.5rem;
+
+          .inner-bar {
+            background-color: $red-soft;
+            height: 0rem;
+            border-radius: 0.4rem;
+            transition: 0.3s ease-in;
+            cursor: pointer;
+            position: relative;
+            .amount {
+              position: absolute;
+              color: $pale-orange;
+              background-color: $dark-brown;
+              top: 0em;
+              padding: 0.5rem;
+              left: 50%;
+              transform: translateX(-50%);
+              border-radius: 0.25rem;
+              opacity: 0;
+              transition: 0.3s ease-in;
+              font-size: 0.8rem;
+            }
+            &:hover {
+              background-color: lighten($red-soft, 20%);
+              .amount {
+                opacity: 1;
+                top: -2.25rem;
+              }
+            }
+          }
+        }
+        &.active {
+          .inner-bar {
+            background-color: $cyan;
+            &:hover {
+              background-color: lighten($cyan, 20%);
+            }
+          }
+        }
+        .day-name {
+          text-align: center;
+          color: $midium-brown;
+          @include xsm {
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+  &__body-footer {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    .current-month {
+      .title {
+        color: $midium-brown;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .total {
+        color: $dark-brown;
+        font-size: 2.4rem;
+        @include xsm {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .last-month {
+      .total {
+        text-align: right;
+        color: $dark-brown;
+        font-weight: bold;
+      }
+      .title {
+        color: $midium-brown;
+      }
+    }
+  }
+}

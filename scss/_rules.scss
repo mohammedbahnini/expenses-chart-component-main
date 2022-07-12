@@ -1,0 +1,20 @@
+@use "vars" as *;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: $cream;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}

@@ -1,0 +1,13 @@
+@use "vars" as *;
+
+@mixin xsm {
+  @media (max-width: $xs) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: $sm) {
+    @content;
+  }
+}
